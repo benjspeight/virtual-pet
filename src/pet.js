@@ -9,15 +9,27 @@ function Pet(name) {
     this.age = ZERO;
     this.hunger = ZERO;
     this.fitness = MAXIMUM_FITNESS;
-    this.growUp = function () {
+};
+
+Pet.prototype = {
+    get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    }
+  };
+
+Pet.prototype.growUp = function () {
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+      }
         this.age += 1;
         this.hunger += 5;
         this.fitness -= 3;
     };
-};
 
 Pet.prototype.walk = function () {
-    if ((this.fitness + 4) <= MAXIMUM_FITNESS ) {
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+    } if ((this.fitness + 4) <= MAXIMUM_FITNESS ) {
         this.fitness += 4;
     } else {
         this.fitness = MAXIMUM_FITNESS
@@ -25,7 +37,9 @@ Pet.prototype.walk = function () {
 }
 
 Pet.prototype.feed = function () {
-    if (this.hunger - 3 > ZERO) {
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+    } if (this.hunger - 3 > ZERO) {
         this.hunger -= 3;
     } else {
         this.hunger = ZERO
@@ -33,7 +47,9 @@ Pet.prototype.feed = function () {
 }
 
 Pet.prototype.checkUp = function () {
-    if (this.fitness <= LOW_FITNESS && this.hunger <= HIGH_HUNGER) {
+    if (!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+    } if (this.fitness <= LOW_FITNESS && this.hunger <= HIGH_HUNGER) {
        console.log("I need a walk");
     } else if (this.hunger >= HIGH_HUNGER && this.fitness >= LOW_FITNESS){
        console.log("I am hungry");
@@ -41,5 +57,8 @@ Pet.prototype.checkUp = function () {
        console.log("I am hungry AND I need a walk");
     } else console.log("I feel great!");
 }
+
+
+
 
 module.exports = Pet;
