@@ -21,4 +21,12 @@ Pet.prototype.walk = function () {
     }
 }
 
+Pet.prototype.feed = function () {
+    if (this.hunger - 3 > ZERO) {
+        this.hunger -= 3;
+    } else {
+        this.hunger = ZERO
+    }
+}
+
 module.exports = Pet;
