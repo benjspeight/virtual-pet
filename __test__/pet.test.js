@@ -21,22 +21,37 @@ describe('constructor', () => {
 });
 
 describe('growUp', () => {
-    
-  it('increments the age by 1', () => {
+  it('increase the age by 1', () => {
     const pet = new Pet('Fido');
     pet.growUp();
     expect(pet.age).toEqual(1);
   });
 
-  it('increments the hunger value by 5', () => {
+  it('increase the hunger value by 5', () => {
     const pet = new Pet('Fido');
     pet.growUp();
     expect(pet.hunger).toEqual(5);
   });
 
-  it('decrements the fitness value by 3', () => {
+  it('decreases the fitness value by 3', () => {
     const pet = new Pet('Fido');
     pet.growUp();
     expect(pet.fitness).toEqual(7);
+  });
+});
+
+describe('walk', () => {
+  it('increase fitness by 4', () => {
+    const pet = new Pet('Fido');
+    pet.fitness = 4;
+    pet.walk();
+    expect(pet.fitness).toEqual(8);
+    });
+  
+  it('increases fitness by a maximum to 10', () => {
+    const pet = new Pet('Fido');
+    pet.fitness = 8;
+    pet.walk();
+    expect(pet.fitness).toEqual(10);
   });
 });
