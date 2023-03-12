@@ -1,12 +1,14 @@
 const Pet = require('../src/pet');
 
 describe('constructor', () => {
+
   it('returns an object', () => {
     expect(new Pet('Fido')).toBeInstanceOf(Object);
   });
 });
 
 describe('constructor', () => {
+
   it('sets the name property', () => {
     const pet = new Pet('Fido');
     expect(pet.name).toEqual('Fido');
@@ -14,6 +16,7 @@ describe('constructor', () => {
 });
 
 describe('constructor', () => {
+
   it('has a initial age of 0', () => {
     const pet = new Pet('Fido');
     expect(pet.age).toEqual(0);
@@ -21,6 +24,7 @@ describe('constructor', () => {
 });
 
 describe('growUp', () => {
+
   it('increase the age by 1', () => {
     const pet = new Pet('Fido');
     pet.growUp();
@@ -41,6 +45,7 @@ describe('growUp', () => {
 });
 
 describe('walk', () => {
+
   it('increase fitness by 4', () => {
     const pet = new Pet('Fido');
     pet.fitness = 4;
@@ -57,6 +62,7 @@ describe('walk', () => {
 });
 
 describe('feed', () => {
+
   it('decreases hunger by 3', () => {
     const pet = new Pet('Fido');
     pet.hunger = 5;
@@ -69,5 +75,36 @@ describe('feed', () => {
     pet.hunger = 2;
     pet.feed();
     expect(pet.hunger).toEqual(0);
+  });
+});
+
+describe('checkUp', () => {
+
+  it('if fitness is 3 or less', () => {
+    const pet = new Pet('Fido');
+    pet.fitness <= 3;
+    pet.checkUp();
+    expect(console.log("I need a walk"))
+  });
+
+  it('if hunger is 5 or more', () => {
+    const pet = new Pet('Fido');
+    pet.hunger >= 5;
+    pet.checkUp();
+    expect(console.log("I am hungry"))
+  });
+
+  it('if fitness is 3 or less AND hunger is 5 or more', () => {
+    const pet = new Pet('Fido');
+    pet.fitness <= 3 && pet.hunger >= 5;
+    pet.checkUp();
+    expect(console.log("I am hungry AND I need a walk"))
+  });
+
+  it('if neither fitness or hunger are true', () => {
+    const pet = new Pet('Fido');
+    pet.fitness > 3 && pet.hunger < 5;
+    pet.checkUp();
+    expect(console.log("I feel great!"))
   });
 });
