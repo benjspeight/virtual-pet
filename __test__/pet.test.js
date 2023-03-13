@@ -5,17 +5,11 @@ describe('constructor', () => {
   it('returns an object', () => {
     expect(new Pet('Fido')).toBeInstanceOf(Object);
   });
-});
-
-describe('constructor', () => {
 
   it('sets the name property', () => {
     const pet = new Pet('Fido');
     expect(pet.name).toEqual('Fido');
   });
-});
-
-describe('constructor', () => {
 
   it('has a initial age of 0', () => {
     const pet = new Pet('Fido');
@@ -25,11 +19,11 @@ describe('constructor', () => {
 
 describe('growUp', () => {
 
-    it('throws an error if the pet is not alive', () => {
-        const pet = new Pet('Fido');
-        pet.age = 30;
-        expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
-      }); 
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+    pet.age = 30;
+    expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+  }); 
 
   it('increase the age by 1', () => {
     const pet = new Pet('Fido');
@@ -153,3 +147,17 @@ describe('isAlive', () => {
     expect(pet.isAlive).toBe(true)
   });
 });
+
+describe('adoptChild', () => {
+  it('adds child array element to .children property', () => {
+    const parent = new Pet('Fido');
+    const child = new Pet('Junior');
+    expect(parent.adoptChild(child)).toEqual({
+        name: 'Fido',
+        age: 0,
+        hunger: 0,
+        fitness: 10,
+        children: ['Junior']
+      });
+    });
+  });
