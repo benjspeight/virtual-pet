@@ -35,19 +35,26 @@ This function allows a pet to adopt a child. It adds the name of the child to th
 There are several constants that are used throughout the pet functions:
 
 MAXIMUM_FITNESS: The maximum fitness a pet can have.
+<div>
 ZERO: The value zero.
+<div>
 LOW_FITNESS: The fitness level below which a pet needs a walk.
+<div>
 HIGH_HUNGER: The hunger level above which a pet is hungry.
-Properties
+<div>
+
+### Properties
 Each pet has the following properties:
 
 name: The name of the pet.
+<div>
 age: The age of the pet.
+<div>
 hunger: The hunger level of the pet.
+<div>
 fitness: The fitness level of the pet.
+<div>
 children: An array of the names of the pet's children.
-Examples
-Here are some examples of how to use the virtual pet:
 
 ### Contributing
 Contributions to this project are welcome! If you find a bug or have an idea for a new feature, please open an issue or submit a pull request.
