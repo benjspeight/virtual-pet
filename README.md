@@ -33,7 +33,7 @@ This function allows a pet to adopt a child. It adds the name of the child to th
 ### Constants
 
 There are several constants that are used throughout the pet functions:
-
+<div>
 MAXIMUM_FITNESS: The maximum fitness a pet can have.
 <div>
 ZERO: The value zero.
@@ -45,7 +45,7 @@ HIGH_HUNGER: The hunger level above which a pet is hungry.
 
 ### Properties
 Each pet has the following properties:
-
+<div>
 name: The name of the pet.
 <div>
 age: The age of the pet.
