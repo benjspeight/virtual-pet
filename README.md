@@ -36,7 +36,9 @@ There are several constants that are used throughout the pet functions:
 <div>
 MAXIMUM_FITNESS: The maximum fitness a pet can have.
 <div>
-ZERO: The value zero.
+MINIMUM_HUNGER: The minimum hunger a pet can have.
+<div>
+MINIMUM_AGE: The minimum age a pet can be.
 <div>
 LOW_FITNESS: The fitness level below which a pet needs a walk.
 <div>
